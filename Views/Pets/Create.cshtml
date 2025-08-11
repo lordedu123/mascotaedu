@@ -1,0 +1,36 @@
+@model mascotaedu.Models.Pet
+@{
+    ViewData["Title"] = "Registrar Mascota";
+    Layout = "_Layout";
+}
+<h2>Registrar Mascota</h2>
+
+<form asp-action="Create" method="post" class="row g-3">
+    <div class="col-md-6">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="Type" class="form-label"></label>
+        <input asp-for="Type" class="form-control" />
+        <span asp-validation-for="Type" class="text-danger"></span>
+    </div>
+    <div class="col-md-3">
+        <label asp-for="Age" class="form-label"></label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <label asp-for="Notes" class="form-label"></label>
+        <textarea asp-for="Notes" class="form-control"></textarea>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Registrar</button>
+        <a class="btn btn-secondary" href="/Pets">Volver</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

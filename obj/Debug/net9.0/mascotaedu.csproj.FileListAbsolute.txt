@@ -94,3 +94,4 @@ C:\Users\Eduardo\Downloads\mascotaedu\obj\Debug\net9.0\refint\mascotaedu.dll
 C:\Users\Eduardo\Downloads\mascotaedu\obj\Debug\net9.0\mascotaedu.pdb
 C:\Users\Eduardo\Downloads\mascotaedu\obj\Debug\net9.0\mascotaedu.genruntimeconfig.cache
 C:\Users\Eduardo\Downloads\mascotaedu\obj\Debug\net9.0\ref\mascotaedu.dll
+C:\Users\Eduardo\Downloads\mascotaedu\obj\Debug\net9.0\mascotaedu.sourcelink.json

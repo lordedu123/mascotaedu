@@ -1,0 +1,25 @@
+@model IEnumerable<mascotaedu.Models.Pet>
+@{
+    ViewData["Title"] = "Mascotas";
+    Layout = "_Layout";
+}
+<h2>Mascotas registradas</h2>
+<p><a class="btn btn-success" href="/Pets/Create">Registrar nueva mascota</a></p>
+
+<table class="table">
+    <thead>
+        <tr><th>Nombre</th><th>Tipo</th><th>Edad</th><th>Registrado</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach(var pet in Model)
+        {
+            <tr>
+                <td>@pet.Name</td>
+                <td>@pet.Type</td>
+                <td>@pet.Age</td>
+                <td>@pet.CreatedAt.ToLocalTime().ToString("g")</td>
+                <td><a class="btn btn-sm btn-primary" href="/Pets/Details/@pet.Id">Ver</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
