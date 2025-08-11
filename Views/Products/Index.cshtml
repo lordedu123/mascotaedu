@@ -1,0 +1,29 @@
+@model IEnumerable<mascotaedu.Models.Product>
+@{
+    ViewData["Title"] = "Productos";
+    Layout = "_Layout";
+}
+<h2>Productos</h2>
+<p><a class="btn btn-success" href="/Products/Create">Agregar producto</a></p>
+
+<div class="row row-cols-1 row-cols-md-3 g-3">
+@foreach(var p in Model)
+{
+    <div class="col">
+        <div class="card h-100">
+            @if(!string.IsNullOrEmpty(p.ImageUrl))
+            {
+                <img src="@p.ImageUrl" class="card-img-top" alt="@p.Name" />
+            }
+            <div class="card-body">
+                <h5 class="card-title">@p.Name</h5>
+                <p class="card-text">@p.Description</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Precio: @p.Price.ToString("C") | Stock: @p.Stock</small>
+                <a class="btn btn-sm btn-primary float-end" href="/Products/Details/@p.Id">Ver</a>
+            </div>
+        </div>
+    </div>
+}
+</div>

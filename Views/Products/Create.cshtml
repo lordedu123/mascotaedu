@@ -1,0 +1,39 @@
+@model mascotaedu.Models.Product
+@{
+    ViewData["Title"] = "Agregar Producto";
+    Layout = "_Layout";
+}
+<h2>Agregar Producto</h2>
+
+<form asp-action="Create" method="post" class="row g-3">
+    <div class="col-md-6">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <div class="col-md-3">
+        <label asp-for="Stock" class="form-label"></label>
+        <input asp-for="Stock" class="form-control" />
+    </div>
+    <div class="col-12">
+        <label asp-for="ImageUrl" class="form-label">URL de imagen (opcional)</label>
+        <input asp-for="ImageUrl" class="form-control" />
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Guardar</button>
+        <a class="btn btn-secondary" href="/Products">Volver</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
