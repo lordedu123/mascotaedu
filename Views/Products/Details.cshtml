@@ -1,0 +1,19 @@
+@model mascotaedu.Models.Product
+@{
+    ViewData["Title"] = "Detalle Producto";
+    Layout = "_Layout";
+}
+<h2>@Model.Name</h2>
+
+@if(!string.IsNullOrEmpty(Model.ImageUrl))
+{
+    <img src="@Model.ImageUrl" class="img-fluid mb-3" alt="@Model.Name" />
+}
+
+<dl class="row">
+    <dt class="col-sm-3">Descripción</dt><dd class="col-sm-9">@Model.Description</dd>
+    <dt class="col-sm-3">Precio</dt><dd class="col-sm-9">@Model.Price.ToString("C")</dd>
+    <dt class="col-sm-3">Stock</dt><dd class="col-sm-9">@Model.Stock</dd>
+</dl>
+
+<a class="btn btn-secondary" href="/Products">Volver</a>
